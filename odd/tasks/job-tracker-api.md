@@ -17,7 +17,7 @@ Branch: main (bootstrap), feature branches per task afterwards · Delivery: ask-
 | ID | Specs | Route | Status | Evidence |
 |----|-------|-------|--------|----------|
 | T1 | S5, S6 | inline | done | scaffold; `./mvnw test` green (context loads on PostgreSQL 18 Testcontainers) |
-| T2 | S5 | inline | pending | public GitHub repo (needs `gh auth login`) |
+| T2 | S5 | inline | done | https://github.com/domgarlor/job-tracker-api (bootstrap e38e731, noreply author email) |
 | T3 | S3, S4 | inline | pending | CV profiles + immutable CV versions (PDF upload/download, SHA-256 dedup) |
 | T4 | S2, S4 | inline | pending | companies, offers, applications referencing a CV version |
 | T5 | S2 | inline | pending | interviews and follow-ups with `@Scheduled` reminders |
@@ -30,4 +30,5 @@ Branch: main (bootstrap), feature branches per task afterwards · Delivery: ask-
 - L2 (2026-11-18, user): "también podría gestionar múltiples CV en PDF, con n perfiles (ampliables) QA, BBDD,backend.NET, backend.NET-Java, etc. Necesito sabe que curriculum envié a cada candidatura."
 - L3 (2026-11-18, user): "en una carpeta propia con repositorio público  en GitHub" / "en inglés que cada vez gana más peso en las ofertas en España."
 - L4: Purpose: defend Spring Boot in interviews (real Java experience is test automation); built and tested without relying on AI in live tests.
-- L5: T1 done. Initializr returned `4.1.2.RELEASE` as parent version; Maven Central uses `4.1.2` — fixed in pom.xml. Next: T2 after `gh auth login`.
+- L5: T1 done. Initializr returned `4.1.2.RELEASE` as parent version; Maven Central uses `4.1.2` — fixed in pom.xml. Next: T2.
+- L6 (2026-11-18): T2 done. User chose GitHub noreply email for commits in this repo ("sí, usa la dirección privada de GitHub"). Next: T3.
