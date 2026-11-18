@@ -18,7 +18,7 @@ Branch: main (bootstrap), feature branches per task afterwards · Delivery: ask-
 |----|-------|-------|--------|----------|
 | T1 | S5, S6 | inline | done | scaffold; `./mvnw test` green (context loads on PostgreSQL 18 Testcontainers) |
 | T2 | S5 | inline | done | https://github.com/domgarlor/job-tracker-api (bootstrap e38e731, noreply author email) |
-| T3 | S3, S4 | inline | pending | CV profiles + immutable CV versions (PDF upload/download, SHA-256 dedup) |
+| T3 | S3, S4 | inline | done | CV profiles + immutable CV versions; RED 10/11 failing, GREEN 12/12 (`CvApiTests`) on branch feat/cv-profiles-versions |
 | T4 | S2, S4 | inline | pending | companies, offers, applications referencing a CV version |
 | T5 | S2 | inline | pending | interviews and follow-ups with `@Scheduled` reminders |
 | T6 | S6 | inline | pending | Spring Security with JWT |
@@ -32,3 +32,4 @@ Branch: main (bootstrap), feature branches per task afterwards · Delivery: ask-
 - L4: Purpose: defend Spring Boot in interviews (real Java experience is test automation); built and tested without relying on AI in live tests.
 - L5: T1 done. Initializr returned `4.1.2.RELEASE` as parent version; Maven Central uses `4.1.2` — fixed in pom.xml. Next: T2.
 - L6 (2026-11-18): T2 done. User chose GitHub noreply email for commits in this repo ("sí, usa la dirección privada de GitHub"). Next: T3.
+- L7 (2026-11-18): T3 done. User: "escribe el código. Después lo reviso y te pregunto lo que no entienda." Files stored on disk keyed by SHA-256 (app.storage.cv-dir); versions immutable (@Immutable, no PUT/DELETE); duplicate PDF -> 409 with existingVersionId; non-PDF (magic bytes) -> 415. ddl-auto=validate caught CHAR vs VARCHAR mismatch. Next: T4.
